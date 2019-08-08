@@ -1,0 +1,20 @@
+.bigPlay {
+    -fx-background-color: #393f4d;
+    -fx-background-radius: 0 0 18 18;
+    -fx-border-radius: 0 0 18 18;
+}
+
+.smallPlay {
+    -fx-background-color: #1d1e22;
+    -fx-background-radius: 0 0 18 18;
+    -fx-border-radius: 0 0 18 18;
+}
+
+.cover {
+    -fx-background-radius: 50;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.body {
+    -fx-background-color: transparent;
+}
