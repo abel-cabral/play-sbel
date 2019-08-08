@@ -18,7 +18,7 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
-        stage.setTitle("Hello World");
+        stage.setTitle("Play'sbel");
         stage.show();
         this.stage = stage;
     }

@@ -1,11 +1,10 @@
 package gui;
 
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaErrorEvent;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
@@ -14,52 +13,55 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    private MediaPlayer mediaPlayer;
+    private boolean pauseMusic = false;
+    private boolean playingMusic = false;
+
+    MediaPlayer mediaPlayer = null;
+    String source = new File("src/music/angels.wav").getAbsolutePath();
+    Media media;
+    private final String path = getClass().getResource(
+            "angels.wav").toString();
 
     @FXML
-    public void closeProgram() {
+    private Label musicName;
+
+    @FXML
+    MediaView mediaView;
+
+    @FXML
+    void closeProgram() {
         Platform.exit();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String source = "/music/Angels - Within Temptation.mp3";
-        Media media;
-        MediaPlayer mediaPlayer;
-        MediaView mediaView;
-        try {
-            media = new Media(source);
-            if (media.getError() == null) {
-                media.setOnError(new Runnable() {
-                    public void run() {
-                        // Handle asynchronous error in Media object.
-                    }
-                });
-                try {
-                    mediaPlayer = new MediaPlayer(media);
-                    if (mediaPlayer.getError() == null) {
-                        mediaPlayer.setOnError(new Runnable() {
-                            public void run() {
-                                // Handle asynchronous error in MediaPlayer object.
-                            }
-                        });
-                        mediaView = new MediaView(mediaPlayer);
-                        mediaView.setOnError(new EventHandler<MediaErrorEvent>() {
-                            public void handle(MediaErrorEvent t) {
-                                // Handle asynchronous error in MediaView.
-                            }
-                        });
-                    } else {
-                        // Handle synchronous error creating MediaPlayer.
-                    }
-                } catch (Exception mediaPlayerException) {
-                    // Handle exception in MediaPlayer constructor.
-                }
+
+    }
+
+    @FXML
+    void playMusic() {
+        if (!playingMusic) {
+            musicName.setText(new File(path).getName().toUpperCase());
+            media = new Media(new File(path).getPath());
+
+            //Instantiating MediaPlayer class
+            mediaPlayer = new MediaPlayer(media);
+
+            mediaView.setMediaPlayer(mediaPlayer);
+            mediaPlayer.setAutoPlay(true);
+            mediaPlayer.setVolume(100);
+            mediaPlayer.play();
+
+            // Define que há uma musica tocando
+            playingMusic = true;
+        } else {
+            if (pauseMusic) {
+                mediaPlayer.pause();
             } else {
-                // Handle synchronous error creating Media.
+                mediaPlayer.play();
             }
-        } catch (Exception mediaException) {
-            // Handle exception in Media constructor.
+            pauseMusic = !pauseMusic;
         }
+
     }
 }
