@@ -15,11 +15,11 @@ import java.net.URL;
 import javafx.scene.media.MediaPlayer.Status;
 
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainController implements Initializable {
-    private boolean pauseMusic = false;
-    private boolean playingMusic = false;
-    private MediaPlayer.Status status;
+    Timer timer = new Timer();
 
     MediaPlayer mediaPlayer = null;
     Media media = null;
@@ -57,6 +57,8 @@ public class MainController implements Initializable {
             @Override
             public void run() {
                 mediaPlayer.play();
+                timeBar(mediaPlayer.getTotalDuration().toMillis());
+                System.out.println(mediaPlayer.getTotalDuration().toMillis());
             }
         });
 
@@ -78,5 +80,14 @@ public class MainController implements Initializable {
 
         mediaPlayer.setVolume(80);
         progressBar.setValue(0);
+    }
+
+    private void timeBar(double millis) {
+
+        timer.schedule(new TimerTask() {
+            public void run() {
+                progressBar.setValue(progressBar.getValue() + 0.1);
+            }
+        }, 0, (int) Math.round(millis) / 1000);
     }
 }
