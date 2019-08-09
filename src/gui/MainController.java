@@ -9,67 +9,52 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.scene.media.MediaView;
+import util.SelectFile;
 import util.TimeConvert;
 
 import java.io.File;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainController implements Initializable {
-    SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
-
+    public static List<File> playList = new ArrayList<File>();
+    private int current = 0;
+    public static File playing;
 
     Double timeMusic;
-
 
     MediaPlayer mediaPlayer = null;
     Media media = null;
 
-    // Localizacao do Audio
-    private final String source = getClass().getResource("Sorry-Madonna.wav").toString();
-
     @FXML
-    private Slider progressBar;
-
+    Slider progressBar;
     @FXML
-    private Label timeScreen;
-
+    Label timeScreen;
     @FXML
-    private Label musicName;
-
+    Label musicName;
     @FXML
     MediaView mediaView;
 
-    @FXML
-    void closeProgram() {
-        Platform.exit();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        beforePlayMusic();
+        mediaPlayer = mediaPlayerFactory(playing);          // A cada musica nova precisamos instanciar
+        mediaView.setMediaPlayer(mediaPlayer);
+        progressBar.setValue(0);
+        playMusicButton();
     }
 
     @FXML
     public void syncControlPlayPause() {
-        // Instancia um mediaPlayer
-        if (mediaPlayer == null) {
-            initMusicPlayer(source);
-        }
-
         mediaPlayer.setOnReady(new Runnable() {
             @Override
             public void run() {
                 timeMusic = mediaPlayer.getTotalDuration().toMillis();
-
                 // Inicialização de componentes de tela
                 timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
-                musicName.setText(new File(source).getName().toUpperCase());
-                timeBar(mediaPlayer.getTotalDuration().toMillis());
-                timeLabel();
+                musicName.setText(new File(playing.toString()).getName().toUpperCase());
+
 
                 mediaPlayer.play();
             }
@@ -80,21 +65,6 @@ public class MainController implements Initializable {
         } else if (mediaPlayer.getStatus() == Status.PAUSED) {
             mediaPlayer.play();
         }
-    }
-
-
-    private void initMusicPlayer(String source) {
-        media = new Media(new File(source).getPath());
-
-        // Instantiating MediaPlayer class
-        mediaPlayer = new MediaPlayer(media);
-        mediaView.setMediaPlayer(mediaPlayer);
-
-        // Inicialização de componentes de tela
-
-
-        mediaPlayer.setVolume(80);
-        progressBar.setValue(0);
     }
 
     private void timeBar(double millis) {
@@ -123,5 +93,82 @@ public class MainController implements Initializable {
                 }
             }
         }, 1000, 1000);
+    }
+
+    @FXML
+    public void nextMusic() {
+        if (playList.get(current) != null) {
+            current += 1;
+            mediaPlayer.stop();
+            playing = playList.get(current);
+            mediaPlayer = mediaPlayerFactory(playing);
+            playMusicButton();
+        }
+    }
+
+    @FXML
+    public void previousMusic() {
+        if (current > 0) {
+            current -= 1;
+            mediaPlayer.stop();
+            playing = playList.get(current);
+            mediaPlayer = mediaPlayerFactory(playing);
+            playMusicButton();
+        }
+    }
+
+    @FXML
+    public void playMusicButton() {
+        mediaPlayer.setOnReady(new Runnable() {
+            @Override
+            public void run() {
+                // Dados da Música Atual
+                timeMusic = mediaPlayer.getTotalDuration().toMillis();
+                timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
+                musicName.setText(playing.getName().toUpperCase());
+                // timeBar(mediaPlayer.getTotalDuration().toMillis());
+                // timeLabel();
+                mediaPlayer.play();
+            }
+        });
+
+        if (mediaPlayer.getStatus() == Status.PAUSED) {
+            mediaPlayer.play();
+        } else if (mediaPlayer.getStatus() == Status.PLAYING) {
+            mediaPlayer.pause();
+        }
+    }
+
+    private void beforePlayMusic() {
+        if (playList.isEmpty()) {
+            // Evita repeticoes
+            Set<File> auxList = new HashSet<File>(); // Irá evitar repeticoes
+            auxList.addAll(SelectFile.selectMusics());
+
+            // Add a playlist
+            playList = auxList.stream().collect(Collectors.toList());
+
+            if (playing == null) {
+                playing = playList.get(current);
+            }
+        }
+    }
+
+    @FXML
+    void closeProgram() {
+        Platform.exit();
+        Platform.isImplicitExit();
+        System.exit(143);
+    }
+
+
+    // UTILITARIOS
+    public MediaPlayer mediaPlayerFactory(File source) {
+        // Instantiating MediaPlayer class
+        Media facMedia = new Media(new File("file:" + source).getPath());
+        MediaPlayer facMediaPlayer = new MediaPlayer(facMedia);
+        // Inicialização de componentes de tela
+        facMediaPlayer.setVolume(80);
+        return facMediaPlayer;
     }
 }
