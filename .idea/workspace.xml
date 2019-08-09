@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/util/TimeConvert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainView.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,15 +93,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+            <state relative-caret-position="304">
+              <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#280#281#0" expanded="true" />
                 <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#2162#2303#0" expanded="true" />
-                <element signature="e#2302#2303#0" expanded="true" />
+                <element signature="e#2297#2438#0" expanded="true" />
+                <element signature="e#2437#2438#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -144,6 +157,8 @@
         <option value="$PROJECT_DIR$/src/util/MyPlayer.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/gui/MainView.fxml" />
+        <option value="$PROJECT_DIR$/src/util/timeConvert.java" />
+        <option value="$PROJECT_DIR$/src/util/TimeConvert.java" />
         <option value="$PROJECT_DIR$/src/gui/MainController.java" />
       </list>
     </option>
@@ -333,12 +348,12 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1565222689095" duration="1329000" />
-      <workItem from="1565283057514" duration="20628000" />
+      <workItem from="1565283057514" duration="27465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27199000" />
+    <option name="totallyTimeSpent" value="34036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="973" extended-state="6" />
@@ -388,18 +403,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainController.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -414,13 +417,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -442,6 +438,13 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -449,16 +452,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="304">
+          <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#280#281#0" expanded="true" />
             <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#2162#2303#0" expanded="true" />
-            <element signature="e#2302#2303#0" expanded="true" />
+            <element signature="e#2297#2438#0" expanded="true" />
+            <element signature="e#2437#2438#0" expanded="true" />
           </folding>
         </state>
       </provider>
