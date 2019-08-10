@@ -1,6 +1,8 @@
 package gui;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -9,6 +11,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 import util.SelectFile;
 import util.TimeConvert;
 
@@ -28,7 +31,8 @@ public class MainController implements Initializable {
     Media media = null;
 
     @FXML
-    Slider progressBar;
+    public Slider progressBar = new Slider();
+
     @FXML
     Label timeScreen;
     @FXML
@@ -97,7 +101,7 @@ public class MainController implements Initializable {
 
     @FXML
     public void nextMusic() {
-        if (playList.get(current) != null) {
+        if (playList.size() > current + 1) {
             current += 1;
             mediaPlayer.stop();
             playing = playList.get(current);
@@ -128,6 +132,12 @@ public class MainController implements Initializable {
                 musicName.setText(playing.getName().toUpperCase());
                 // timeBar(mediaPlayer.getTotalDuration().toMillis());
                 // timeLabel();
+
+                // Posiciona a barra de progresso
+                progressBar.setValue(0);
+                progressBar.setMax(100);
+
+
                 mediaPlayer.play();
             }
         });
@@ -169,6 +179,26 @@ public class MainController implements Initializable {
         MediaPlayer facMediaPlayer = new MediaPlayer(facMedia);
         // Inicialização de componentes de tela
         facMediaPlayer.setVolume(80);
+        facMediaPlayer.setAutoPlay(true);
+
+        // Subscrible para ouvir mudanças na barra de progresso
+        progressBar.setShowTickMarks(true);
+        progressBar.setSnapToTicks(true);
+        progressBar.setBlockIncrement(30);
+
+        // Adding Listener to value property.
+        progressBar.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, //
+                                Number oldValue, Number newValue) {
+                double valueProgress = timeMusic * (double) newValue / 100;
+                mediaPlayer.pause();
+                mediaPlayer.seek(Duration.millis(valueProgress));
+                mediaPlayer.play();
+            }
+        });
+
+
         return facMediaPlayer;
     }
 }
