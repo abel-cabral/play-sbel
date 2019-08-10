@@ -1,5 +1,8 @@
 package gui;
 
+import de.jensd.fx.glyphs.GlyphIcons;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -7,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
@@ -23,7 +27,7 @@ import java.util.stream.Collectors;
 public class MainController implements Initializable {
     public static List<File> playList = new ArrayList<File>();
     private int current = 0;
-    public static File playing;
+    public File playing;
 
     Double timeMusic;
 
@@ -32,20 +36,33 @@ public class MainController implements Initializable {
 
     @FXML
     public Slider progressBar = new Slider();
-
     @FXML
     Label timeScreen;
     @FXML
     Label musicName;
     @FXML
     MediaView mediaView;
+    @FXML
+    FontAwesomeIcon playPauseIcon;
+    @FXML
+    ImageView gifDancing;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        beforePlayMusic();
-        mediaPlayer = mediaPlayerFactory(playing);          // A cada musica nova precisamos instanciar
-        mediaView.setMediaPlayer(mediaPlayer);
         progressBar.setValue(0);
+        gifDancing.setVisible(false);
+    }
+
+    @FXML
+    private void openFile() {
+        playing = null;
+        Set<File> auxList = new HashSet<File>(); // Irá evitar repeticoes
+        auxList.addAll(SelectFile.selectMusics());
+
+        // Add a playlist
+        playList = auxList.stream().collect(Collectors.toList());
+        playing = playList.get(current);
+        mediaPlayer = mediaPlayerFactory(playing, mediaPlayer);
         playMusicButton();
     }
 
@@ -86,7 +103,7 @@ public class MainController implements Initializable {
             current += 1;
             mediaPlayer.stop();
             playing = playList.get(current);
-            mediaPlayer = mediaPlayerFactory(playing);
+            mediaPlayer = mediaPlayerFactory(playing, mediaPlayer);
             playMusicButton();
         }
     }
@@ -97,32 +114,42 @@ public class MainController implements Initializable {
             current -= 1;
             mediaPlayer.stop();
             playing = playList.get(current);
-            mediaPlayer = mediaPlayerFactory(playing);
+            mediaPlayer = mediaPlayerFactory(playing, mediaPlayer);
             playMusicButton();
         }
     }
 
     @FXML
     public void playMusicButton() {
-        mediaPlayer.setOnReady(new Runnable() {
-            @Override
-            public void run() {
-                // Dados da Música Atual
-                timeMusic = mediaPlayer.getTotalDuration().toMillis();
-                timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
-                musicName.setText(playing.getName().toUpperCase());
-                // timeBar(mediaPlayer.getTotalDuration().toMillis());
-                timeLabel();
+        if (mediaPlayer != null) {
+            mediaPlayer.setOnReady(new Runnable() {
+                @Override
+                public void run() {
+                    // Dados da Música Atual
+                    timeMusic = mediaPlayer.getTotalDuration().toMillis();
+                    timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
+                    musicName.setText(playing.getName().toUpperCase());
+                    // timeBar(mediaPlayer.getTotalDuration().toMillis());
+                    // timeLabel();
 
-                // Posiciona a barra de progresso
+                    // Posiciona a barra de progresso
+                    mediaPlayer.play();
+                    playPauseIcon.setIcon(FontAwesomeIcons.PAUSE);
+                    gifDancing.setVisible(true);
+                }
+            });
+
+            if (mediaPlayer.getStatus() == Status.PAUSED) {
                 mediaPlayer.play();
+                playPauseIcon.setIcon(FontAwesomeIcons.PAUSE);
+                gifDancing.setVisible(true);
+            } else if (mediaPlayer.getStatus() == Status.PLAYING) {
+                playPauseIcon.setIcon(FontAwesomeIcons.PLAY);
+                mediaPlayer.pause();
+                gifDancing.setVisible(false);
             }
-        });
-
-        if (mediaPlayer.getStatus() == Status.PAUSED) {
-            mediaPlayer.play();
-        } else if (mediaPlayer.getStatus() == Status.PLAYING) {
-            mediaPlayer.pause();
+        } else {
+            openFile();
         }
     }
 
@@ -148,9 +175,11 @@ public class MainController implements Initializable {
         System.exit(143);
     }
 
-
     // UTILITARIOS
-    public MediaPlayer mediaPlayerFactory(File source) {
+    public MediaPlayer mediaPlayerFactory(File source, MediaPlayer now) {
+        if (now != null) {
+            now.stop();
+        }
         // Instantiating MediaPlayer class
         Media facMedia = new Media(new File("file:" + source).getPath());
         MediaPlayer facMediaPlayer = new MediaPlayer(facMedia);
