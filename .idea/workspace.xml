@@ -6,60 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Seleciona lista de musicas e troca entre elas">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/playsbel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Avançando a musica pela barra de progresso">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/Sorry-Madonna.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/angels.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/angels.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Bombing King (Bakugos Theme) - 94stones.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Chop Suey! - System Of A Down.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Don't Stop Me Now - Remastered - Queen.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Dream On - Aerosmith.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Fogo (Abertura) [De Digimon Frontier) - Tragicômico.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Hero of Our Time - NateWantsToBattle.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Hung Up - Madonna.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/I See Fire - Sol3 Mio.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/In Styx Embrace - Sirenia.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Loved by You - Journey.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/One-Winged Angel (From Final Fantasy VII) - FalKKonE.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Pegasus Fantasy (Abertura) [De Cavaleiros do Zodíaco] - Tragicômico.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Por Enquanto - Ao Vivo - Cássia Eller.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Red Like Roses Pt 2 - Little V.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Shallow - Lady Gaga.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Sorry - Madonna.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Super Survivor [Dragon Ball Z Budokai Tenkaichi 3] - Mark de Groot.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/Take on Me - RichaadEB.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/The Hero (From One-Punch Man) - Tsuko G.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/music/The Phantom Of The Opera - Nightwish.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/playsbel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/playsbel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Bombing King (Bakugos Theme) - 94stones.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Chop Suey! - System Of A Down.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Don't Stop Me Now - Remastered - Queen.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Dream On - Aerosmith.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Fogo (Abertura) [De Digimon Frontier) - Tragicômico.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Hero of Our Time - NateWantsToBattle.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Hung Up - Madonna.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/I See Fire - Sol3 Mio.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/In Styx Embrace - Sirenia.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Loved by You - Journey.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/One-Winged Angel (From Final Fantasy VII) - FalKKonE.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Pegasus Fantasy (Abertura) [De Cavaleiros do Zodíaco] - Tragicômico.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Por Enquanto - Ao Vivo - Cássia Eller.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Red Like Roses Pt 2 - Little V.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Shallow - Lady Gaga.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Sorry - Madonna.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Sorry-Madonna.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Super Survivor [Dragon Ball Z Budokai Tenkaichi 3] - Mark de Groot.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Take on Me - RichaadEB.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/The Hero (From One-Punch Man) - Tsuko G.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/The Phantom Of The Opera - Nightwish.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/angels.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/angels.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Sorry-Madonna.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/angels.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/angels.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/TimeConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/TimeConvert.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,34 +78,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="193" column="39" selection-start-line="193" selection-start-column="39" selection-end-line="193" selection-end-column="39" />
+            <state relative-caret-position="292">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#syncControlPlayPause#0;class#MainController#0" />
-                <element signature="method#timeLabel#0;class#MainController#0" />
+                <element signature="e#1938#2337#0" expanded="true" />
+                <element signature="e#2336#2337#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/MainView.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/SelectFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="218">
               <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,13 +104,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="38" />
+              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/MainView.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -194,6 +153,10 @@
       <find>selectMusics</find>
       <find>media</find>
       <find>progressBar</find>
+      <find>timeScreen</find>
+      <find>timeMusic</find>
+      <find>System.out.println</find>
+      <find>TimeC</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -212,19 +175,19 @@
         <option value="$PROJECT_DIR$/src/util/MyPlayer.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/util/timeConvert.java" />
-        <option value="$PROJECT_DIR$/src/util/TimeConvert.java" />
         <option value="$PROJECT_DIR$/src/util/SelectFile.java" />
         <option value="$PROJECT_DIR$/src/util/GeneralUtils.java" />
         <option value="$PROJECT_DIR$/src/gui/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/gui/MainController.java" />
+        <option value="$PROJECT_DIR$/src/util/TimeConvert.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-82" />
-    <option name="y" value="60" />
-    <option name="width" value="2560" />
+    <option name="x" value="1280" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
     <option name="height" value="973" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -292,7 +255,7 @@
     <property name="project.structure.side.proportion" value="0.55218214" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -407,7 +370,7 @@
       <workItem from="1565283057514" duration="29323000" />
       <workItem from="1565374015305" duration="9978000" />
       <workItem from="1565384581553" duration="6488000" />
-      <workItem from="1565402290703" duration="3447000" />
+      <workItem from="1565402290703" duration="9866000" />
     </task>
     <task id="LOCAL-00001" summary="Seleciona lista de musicas e troca entre elas">
       <created>1565386929138</created>
@@ -416,11 +379,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565386929138</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Avançando a musica pela barra de progresso">
+      <created>1565406433264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565406433264</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55807000" />
+    <option name="totallyTimeSpent" value="62226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="973" extended-state="6" />
@@ -507,7 +477,8 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Seleciona lista de musicas e troca entre elas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seleciona lista de musicas e troca entre elas" />
+    <MESSAGE value="Avançando a musica pela barra de progresso" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avançando a musica pela barra de progresso" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -525,23 +496,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/GeneralUtils.java" />
-    <entry file="file://$PROJECT_DIR$/src/util/SelectFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
@@ -561,21 +515,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/MainView.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+        <state relative-caret-position="453">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/util/SelectFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="193" column="39" selection-start-line="193" selection-start-column="39" selection-end-line="193" selection-end-column="39" />
+        <state relative-caret-position="218">
+          <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#syncControlPlayPause#0;class#MainController#0" />
-            <element signature="method#timeLabel#0;class#MainController#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1938#2337#0" expanded="true" />
+            <element signature="e#2336#2337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
         </state>
       </provider>
     </entry>

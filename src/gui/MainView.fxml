@@ -53,8 +53,12 @@
             </Label>
             <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="91.0" layoutY="190.0" />
             <FontAwesomeIcon fill="WHITE" glyphName="PLAY" layoutX="179.0" layoutY="542.0" onMouseClicked="#playMusicButton" size="50" />
+            <Label fx:id="timeScreen" layoutX="303.0" layoutY="422.0" text="4:32">
+               <font>
+                  <Font name="Skia" size="17.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Label fx:id="timeScreen" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="56.0" textFill="#1b1b1b" />
    </children>
 </HBox>

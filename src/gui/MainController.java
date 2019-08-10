@@ -49,28 +49,7 @@ public class MainController implements Initializable {
         playMusicButton();
     }
 
-    @FXML
-    public void syncControlPlayPause() {
-        mediaPlayer.setOnReady(new Runnable() {
-            @Override
-            public void run() {
-                timeMusic = mediaPlayer.getTotalDuration().toMillis();
-                // Inicialização de componentes de tela
-                timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
-                musicName.setText(new File(playing.toString()).getName().toUpperCase());
-
-
-                mediaPlayer.play();
-            }
-        });
-
-        if (mediaPlayer.getStatus() == Status.PLAYING) {
-            mediaPlayer.pause();
-        } else if (mediaPlayer.getStatus() == Status.PAUSED) {
-            mediaPlayer.play();
-        }
-    }
-
+    /*
     private void timeBar(double millis) {
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -83,15 +62,17 @@ public class MainController implements Initializable {
             }
         }, 0, (int) Math.round(millis) / 1000);
     }
-
+*/
     private void timeLabel() {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                Platform.runLater(() -> timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss")));
-                timeMusic -= 1000;
+                Platform.runLater(() ->
+                        timeScreen.setText(TimeConvert.convertToMinute(mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis(), "mm:ss"))
+                );
 
-                if (timeMusic <= 0 || mediaPlayer.getStatus() == Status.PAUSED) {
+                if (mediaPlayer.getTotalDuration().toMillis() == mediaPlayer.getCurrentTime().toMillis() || mediaPlayer.getStatus() == Status.PAUSED) {
+                    System.out.println("TimeLabel");
                     timeScreen.setText("");
                     timer.cancel();
                 }
@@ -131,13 +112,9 @@ public class MainController implements Initializable {
                 timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
                 musicName.setText(playing.getName().toUpperCase());
                 // timeBar(mediaPlayer.getTotalDuration().toMillis());
-                // timeLabel();
+                timeLabel();
 
                 // Posiciona a barra de progresso
-                progressBar.setValue(0);
-                progressBar.setMax(100);
-
-
                 mediaPlayer.play();
             }
         });
@@ -182,23 +159,21 @@ public class MainController implements Initializable {
         facMediaPlayer.setAutoPlay(true);
 
         // Subscrible para ouvir mudanças na barra de progresso
-        progressBar.setShowTickMarks(true);
-        progressBar.setSnapToTicks(true);
-        progressBar.setBlockIncrement(30);
+        progressBar.setValue(0);
+        progressBar.setMax(100);
 
         // Adding Listener to value property.
         progressBar.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
-            public void changed(ObservableValue<? extends Number> observable, //
+            public void changed(ObservableValue<? extends Number> observable,
                                 Number oldValue, Number newValue) {
-                double valueProgress = timeMusic * (double) newValue / 100;
+                double valueProgress = (mediaPlayer.getTotalDuration().toMillis() * (double) newValue) / 100;
                 mediaPlayer.pause();
                 mediaPlayer.seek(Duration.millis(valueProgress));
-                mediaPlayer.play();
+                timeMusic = mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis();
+                timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
             }
         });
-
-
         return facMediaPlayer;
     }
 }
