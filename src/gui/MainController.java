@@ -132,8 +132,7 @@ public class MainController implements Initializable {
                     timeMusic = mediaPlayer.getTotalDuration().toMillis();
                     timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
                     musicName.setText(playing.getName().toUpperCase());
-                    // timeBar(mediaPlayer.getTotalDuration().toMillis());
-                    // timeLabel();
+                    mediaPlayer.seek(Duration.millis(1));       // Corrige bug de leitura de mp3
 
                     // Posiciona a barra de progresso
                     mediaPlayer.play();
@@ -211,9 +210,8 @@ public class MainController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Number> observable,
                                 Number oldValue, Number newValue) {
-                double valueProgress = (mediaPlayer.getTotalDuration().toMillis() * (double) newValue) / 100;
                 mediaPlayer.pause();
-                mediaPlayer.seek(Duration.millis(valueProgress));
+                mediaPlayer.seek(mediaPlayer.getMedia().getDuration().multiply(progressBar.getValue() / 100));
                 timeMusic = mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis();
                 timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
             }
