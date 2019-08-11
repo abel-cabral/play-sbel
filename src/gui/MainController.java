@@ -1,6 +1,5 @@
 package gui;
 
-import de.jensd.fx.glyphs.GlyphIcons;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import javafx.application.Platform;
@@ -56,8 +55,14 @@ public class MainController implements Initializable {
     @FXML
     private void openFile() {
         playing = null;
+        List<File> aux = SelectFile.selectMusics();
+
+        if (aux == null) {
+            return;
+        }
+
         Set<File> auxList = new HashSet<File>(); // Irá evitar repeticoes
-        auxList.addAll(SelectFile.selectMusics());
+        auxList.addAll(aux);
 
         // Add a playlist
         playList = auxList.stream().collect(Collectors.toList());
@@ -88,9 +93,7 @@ public class MainController implements Initializable {
                         timeScreen.setText(TimeConvert.convertToMinute(mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis(), "mm:ss"))
                 );
 
-                if (mediaPlayer.getTotalDuration().toMillis() == mediaPlayer.getCurrentTime().toMillis() || mediaPlayer.getStatus() == Status.PAUSED) {
-                    System.out.println("TimeLabel");
-                    timeScreen.setText("");
+                if (mediaPlayer.getTotalDuration().toMillis() == mediaPlayer.getCurrentTime().toMillis() || mediaPlayer.getStatus() == Status.PAUSED || mediaPlayer.getStatus() == Status.STOPPED) {
                     timer.cancel();
                 }
             }
@@ -136,6 +139,9 @@ public class MainController implements Initializable {
                     mediaPlayer.play();
                     playPauseIcon.setIcon(FontAwesomeIcons.PAUSE);
                     gifDancing.setVisible(true);
+
+                    // Barra de Progresso e Tempo de Execução
+                    timeLabel();
                 }
             });
 
@@ -143,6 +149,7 @@ public class MainController implements Initializable {
                 mediaPlayer.play();
                 playPauseIcon.setIcon(FontAwesomeIcons.PAUSE);
                 gifDancing.setVisible(true);
+                timeLabel();
             } else if (mediaPlayer.getStatus() == Status.PLAYING) {
                 playPauseIcon.setIcon(FontAwesomeIcons.PLAY);
                 mediaPlayer.pause();
@@ -169,10 +176,18 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    void closeProgram() {
+    public void closeProgram() {
         Platform.exit();
         Platform.isImplicitExit();
         System.exit(143);
+    }
+
+    @FXML
+    public void progressBarManager() {
+        if (mediaPlayer == null) {
+            return;
+        }
+        playMusicButton();
     }
 
     // UTILITARIOS

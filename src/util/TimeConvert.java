@@ -1,10 +1,11 @@
 package util;
 
+import java.text.SimpleDateFormat;
+
 public class TimeConvert {
     public static String convertToMinute(double milliSeconds, String dateFormat) {
+        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
         long aux = (long) milliSeconds;
-        long minutes = (aux / 1000) / 60;
-        long seconds = (aux / 1000) % 60;
-        return minutes + ":" + seconds;
+        return sdf.format(milliSeconds);
     }
 }
