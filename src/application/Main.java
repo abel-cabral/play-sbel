@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,6 +20,8 @@ public class Main extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("Play'sbel");
+        //stage.getIcons().add(new Image("file:" + "/application/logo.png"));
+        stage.getIcons().add(new Image("/application/logo.png"));
         stage.show();
         this.stage = stage;
     }

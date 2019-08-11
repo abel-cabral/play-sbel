@@ -12,7 +12,7 @@ public class SelectFile {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Localizar Músicas");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Arquivos de Audio", "*.wav, *.mp3")
+                new FileChooser.ExtensionFilter("Arquivos de Audio", "*.aif", "*.aiff", "*.m3u8", "*.wav", "*.mp3", "*.mp4", "*.m4a", "*.m4v")
         );
         List<File> list = fileChooser.showOpenMultipleDialog(Main.stage);
         return list;

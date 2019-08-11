@@ -20,6 +20,7 @@ import util.TimeConvert;
 
 import java.io.File;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -150,10 +151,14 @@ public class MainController implements Initializable {
                 gifDancing.setVisible(true);
                 timeLabel();
             } else if (mediaPlayer.getStatus() == Status.PLAYING) {
-                playPauseIcon.setIcon(FontAwesomeIcons.PLAY);
+                playPauseIcon.setIcon(FontAwesomeIcons.ARROW_CIRCLE_RIGHT);
                 mediaPlayer.pause();
                 gifDancing.setVisible(false);
             }
+            // Ao fim da musica avança para a proxima
+            mediaPlayer.setOnEndOfMedia(() -> {
+                nextMusic();
+            });
         } else {
             openFile();
         }
@@ -195,7 +200,7 @@ public class MainController implements Initializable {
             now.stop();
         }
         // Instantiating MediaPlayer class
-        Media facMedia = new Media(new File("file:" + source).getPath());
+        Media facMedia = new Media(new File("file:" + source.getPath().toString().replaceAll(" ", "%20")).getPath());               // Remove espaços que causam error ao ler path
         MediaPlayer facMediaPlayer = new MediaPlayer(facMedia);
         // Inicialização de componentes de tela
         facMediaPlayer.setVolume(80);
