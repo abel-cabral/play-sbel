@@ -17,10 +17,10 @@ import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 import util.SelectFile;
 import util.TimeConvert;
+import util.Utils;
 
 import java.io.File;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -132,7 +132,7 @@ public class MainController implements Initializable {
                     // Dados da Música Atual
                     timeMusic = mediaPlayer.getTotalDuration().toMillis();
                     timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
-                    musicName.setText(playing.getName().toUpperCase());
+                    musicName.setText(playing.getName().substring(0, playing.getName().lastIndexOf('.')).toUpperCase());
                     mediaPlayer.seek(Duration.millis(1));       // Corrige bug de leitura de mp3
 
                     // Posiciona a barra de progresso

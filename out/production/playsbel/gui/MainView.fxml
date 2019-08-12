@@ -4,6 +4,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -42,9 +43,12 @@
                   </ImageView>
                </children>
             </Pane>
-            <FontAwesomeIcon fill="#feda6a" glyphName="ARROW_RIGHT" layoutX="258.0" layoutY="532.0" onMouseClicked="#nextMusic" rotate="-18.0" size="50" />
-            <FontAwesomeIcon fill="#feda6a" glyphName="ARROW_LEFT" layoutX="76.0" layoutY="532.0" onMouseClicked="#previousMusic" rotate="-18.0" size="50" />
-            <JFXSlider fx:id="progressBar" layoutX="31.0" layoutY="422.0" onMouseReleased="#progressBarManager" prefHeight="67.0" prefWidth="315.0" />
+            <FontAwesomeIcon fill="#feda6a" glyphName="ARROW_CIRCLE_RIGHT" layoutX="238.0" layoutY="561.0" onMouseClicked="#nextMusic" rotate="-18.0" size="50" text="" />
+            <FontAwesomeIcon fill="#feda6a" glyphName="ARROW_CIRCLE_LEFT" layoutX="100.0" layoutY="561.0" onMouseClicked="#previousMusic" rotate="-18.0" size="50" />
+            <JFXSlider fx:id="progressBar" layoutX="31.0" layoutY="472.0" onMouseReleased="#progressBarManager" prefHeight="25.0" prefWidth="315.0">
+               <effect>
+                  <Glow level="0.86" />
+               </effect></JFXSlider>
             <ImageView fx:id="gifDancing" blendMode="LIGHTEN" cache="true" cacheHint="SPEED" fitHeight="200.0" fitWidth="200.0" layoutX="90.0" layoutY="190.0" pickOnBounds="true" styleClass="cover">
                <image>
                   <Image url="@../images/tenor.gif" />
@@ -61,8 +65,8 @@
                </font>
             </Label>
             <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="91.0" layoutY="190.0" />
-            <FontAwesomeIcon fx:id="playPauseIcon" fill="WHITE" glyphName="PLAY" layoutX="179.0" layoutY="542.0" onMouseClicked="#playMusicButton" size="50" />
-            <Label fx:id="timeScreen" layoutX="303.0" layoutY="422.0" text="4:32">
+            <FontAwesomeIcon fx:id="playPauseIcon" caretBias="false" fill="WHITE" glyphName="PLAY_CIRCLE" layoutX="161.0" layoutY="570.0" onMouseClicked="#playMusicButton" size="70" text="" textAlignment="CENTER" />
+            <Label fx:id="timeScreen" layoutX="303.0" layoutY="422.0">
                <font>
                   <Font name="Skia" size="17.0" />
                </font>
@@ -72,6 +76,7 @@
                   <Image url="@../images/icons8-musical.png" />
                </image>
             </ImageView>
+            <FontAwesomeIcon fx:id="playPauseIcon1" fill="WHITE" fontSmoothingType="LCD" glyphName="VOLUME_UP" layoutX="332.0" layoutY="582.0" onMouseClicked="#playMusicButton" size="25" text="" wrappingWidth="27.428571701049805" />
          </children>
       </Pane>
    </children>
