@@ -17,7 +17,6 @@ import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 import util.SelectFile;
 import util.TimeConvert;
-import util.Utils;
 
 import java.io.File;
 import java.net.URL;
@@ -73,20 +72,6 @@ public class MainController implements Initializable {
         playMusicButton();
     }
 
-    /*
-    private void timeBar(double millis) {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            public void run() {
-                progressBar.setValue(progressBar.getValue() + 0.1);
-                if (progressBar.getValue() >= 100 || mediaPlayer.getStatus() == Status.PAUSED) {
-                    progressBar.setValue(0);
-                    timer.cancel();
-                }
-            }
-        }, 0, (int) Math.round(millis) / 1000);
-    }
-*/
     private void timeLabel() {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -128,6 +113,8 @@ public class MainController implements Initializable {
             playing = playList.get(current);
             mediaPlayer = mediaPlayerFactory(playing, mediaPlayer);
             playMusicButton();
+        } else {
+            mediaPlayer.seek(Duration.millis(1));
         }
     }
 
@@ -153,18 +140,24 @@ public class MainController implements Initializable {
                 }
             });
 
-            if (mediaPlayer.getStatus() == Status.PAUSED) {
+            if (mediaPlayer.getStatus() == Status.PAUSED || mediaPlayer.getStatus() == Status.STOPPED) {
                 mediaPlayer.play();
                 playPauseIcon.setIcon(FontAwesomeIcons.PAUSE);
                 gifDancing.setVisible(true);
                 timeLabel();
             } else if (mediaPlayer.getStatus() == Status.PLAYING) {
-                playPauseIcon.setIcon(FontAwesomeIcons.ARROW_CIRCLE_RIGHT);
+                playPauseIcon.setIcon(FontAwesomeIcons.PLAY_CIRCLE);
                 mediaPlayer.pause();
                 gifDancing.setVisible(false);
             }
-            // Ao fim da musica avança para a proxima
+
+            // Ao fim da musica avança para a proxima, se nao ultima permite ouvi-la novamente
             mediaPlayer.setOnEndOfMedia(() -> {
+                if (current + 1 == playList.size()) {
+                    mediaPlayer.seek(Duration.millis(1));
+                    mediaPlayer.stop();
+                    playPauseIcon.setIcon(FontAwesomeIcons.PLAY_CIRCLE);
+                }
                 nextMusic();
             });
         } else {

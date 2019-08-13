@@ -6,18 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Leitura de musicicas em sequencia e novos formatos de audio">
-      <change afterPath="$PROJECT_DIR$/src/util/Utils.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="ProgressBar sincronizada com progresso da musica e tempo de execução">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/application/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/gui/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/gui/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/images/icons8-room_sound_filled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/images/icons8-sound_speaker_filled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playsbel/util/SelectFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playsbel/util/SelectFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -81,10 +75,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
+            <state relative-caret-position="435">
+              <caret line="159" column="15" lean-forward="true" selection-start-line="151" selection-start-column="12" selection-end-line="159" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2131#3139#0" expanded="true" />
+                <element signature="e#3138#3139#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="104">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -133,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/SelectFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="208">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,6 +165,8 @@
       <find>progressBar.setValue</find>
       <find>progressBar</find>
       <find>mediaPlayerFactory</find>
+      <find>nextM</find>
+      <find>seek</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -214,6 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,18 +229,6 @@
               <item name="playsbel" type="b2602c69:ProjectViewProjectNode" />
               <item name="playsbel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="playsbel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="playsbel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="playsbel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="playsbel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -249,7 +236,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,6 +386,7 @@
       <workItem from="1565550168980" duration="4325000" />
       <workItem from="1565581744370" duration="126000" />
       <workItem from="1565581918052" duration="188000" />
+      <workItem from="1565680775501" duration="3787000" />
     </task>
     <task id="LOCAL-00001" summary="Seleciona lista de musicas e troca entre elas">
       <created>1565386929138</created>
@@ -436,16 +423,24 @@
       <option name="project" value="LOCAL" />
       <updated>1565554907927</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ProgressBar sincronizada com progresso da musica e tempo de execução">
+      <created>1565682171488</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565682171488</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74515000" />
+    <option name="totallyTimeSpent" value="78302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="973" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19896744" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.200556" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32962668" />
       <window_info id="Designer" order="3" />
@@ -454,7 +449,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32947975" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32947975" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -530,7 +525,8 @@
     <MESSAGE value="Animacoes de botoes e abertura de arquivos" />
     <MESSAGE value="FIx problema de leitura de arquivos em MP3" />
     <MESSAGE value="Leitura de musicicas em sequencia e novos formatos de audio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leitura de musicicas em sequencia e novos formatos de audio" />
+    <MESSAGE value="ProgressBar sincronizada com progresso da musica e tempo de execução" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProgressBar sincronizada com progresso da musica e tempo de execução" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -563,23 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/MainView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1716">
@@ -600,17 +579,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/TimeConvert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="104">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/SelectFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="208">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="159" column="15" lean-forward="true" selection-start-line="151" selection-start-column="12" selection-end-line="159" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2131#3139#0" expanded="true" />
+            <element signature="e#3138#3139#0" expanded="true" />
           </folding>
         </state>
       </provider>
