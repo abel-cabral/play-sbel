@@ -28,6 +28,7 @@ public class MainController implements Initializable {
     public static List<File> playList = new ArrayList<File>();
     private int current = 0;
     public File playing;
+    private boolean progressBarSystem = false;      // Quanto true o usuario moveu a barra de tempo, caso contrário é o sistema atuando
 
     Double timeMusic;
 
@@ -35,7 +36,7 @@ public class MainController implements Initializable {
     Media media = null;
 
     @FXML
-    public Slider progressBar = new Slider();
+    public Slider progressBar;
     @FXML
     Label timeScreen;
     @FXML
@@ -90,8 +91,15 @@ public class MainController implements Initializable {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                Platform.runLater(() ->
-                        timeScreen.setText(TimeConvert.convertToMinute(mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis(), "mm:ss"))
+                Platform.runLater(() -> {
+                            // Relogio decrementando
+                            timeScreen.setText(TimeConvert.convertToMinute(mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis(), "mm:ss"));
+                            // Barra de progresso avançando
+                            double auxPercent = (mediaPlayer.getCurrentTime().toMillis() / mediaPlayer.getTotalDuration().toMillis()) * 100;
+                            progressBarSystem = true;
+                            progressBar.setValue(auxPercent);
+                            progressBarSystem = false;
+                        }
                 );
 
                 if (mediaPlayer.getTotalDuration().toMillis() == mediaPlayer.getCurrentTime().toMillis() || mediaPlayer.getStatus() == Status.PAUSED || mediaPlayer.getStatus() == Status.STOPPED) {
@@ -215,10 +223,15 @@ public class MainController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Number> observable,
                                 Number oldValue, Number newValue) {
+
+                if (progressBarSystem) {
+                    return;
+                }
+
                 mediaPlayer.pause();
-                mediaPlayer.seek(mediaPlayer.getMedia().getDuration().multiply(progressBar.getValue() / 100));
-                timeMusic = mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis();
                 timeScreen.setText(TimeConvert.convertToMinute(timeMusic, "mm:ss"));
+                timeMusic = mediaPlayer.getTotalDuration().toMillis() - mediaPlayer.getCurrentTime().toMillis();
+                mediaPlayer.seek(mediaPlayer.getMedia().getDuration().multiply(progressBar.getValue() / 100));
             }
         });
         return facMediaPlayer;
